@@ -41,11 +41,19 @@ source nlp_env/bin/activate
 ```
 
 ### 4. Run the Interactive Demo
-Once the environment is activated, run the demo script. The first time you run this, it will download the fine-tuned model from the Hugging Face Hub (~400MB).
+Once the environment is activated, run the demo script. The first time you run this, it will automatically download the fine-tuned model from the Hugging Face Hub.
 ```bash
 python quick_demo.py
 ```
 You can now enter financial headlines to see real-time sentiment predictions.
+
+---
+
+## 🤖 Model
+
+The final model trained in this project is hosted on the Hugging Face Hub and can be accessed here:
+
+- **[finbert-financial-sentiment](https://huggingface.co/peejm/finbert-financial-sentiment)**
 
 ---
 
