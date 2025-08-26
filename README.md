@@ -1,3 +1,13 @@
+# Project Summary
+
+This project develops a high-performance sentiment analysis model for financial news headlines to generate reliable trading signals. Starting with baseline models (TF-IDF & Logistic Regression), the project culminates in fine-tuning a domain-specific transformer, `ProsusAI/finbert`.
+
+### Key Results
+- **Peak Accuracy:** **80.8%** with the fine-tuned FinBERT model, a **13.4 point** improvement over the baseline.
+- **Negative Sentiment Detection (F1-Score):** Increased from 7% to **50% (~7x improvement)**, enabling superior risk detection.
+
+---
+
 # Financial Sentiment Analysis for Investment Signal Generation
 
 ## 1. Executive Summary
