@@ -1,14 +1,26 @@
 # Financial Sentiment Analysis for Investment Signal Generation
 
+This project develops a high-performance sentiment analysis model for financial news, fine-tuning `ProsusAI/finbert` to achieve **80.8% accuracy** and generate reliable trading signals. The model demonstrates a **7x improvement** in detecting negative, risk-bearing news compared to baseline methods.
+
+---
+
 ## 🚀 Quick Start Demo
 
-This demo runs a fine-tuned FinBERT model for interactive sentiment analysis. The model is downloaded automatically from the Hugging Face Hub the first time you run it.
+This section guides you through running the interactive demo.
 
-### 1. Run the Setup Script
-This will create a self-contained Python environment and install all necessary dependencies.
+### 1. Clone the Repository
+```bash
+git clone https://github.com/jp-marques/financial-sentiment-analysis.git
+cd financial-sentiment-analysis
+```
+
+### 2. Run the Setup Script
+This will create a self-contained Python environment (`nlp_env`) and install all dependencies.
 
 **Windows:**
-Double-click `setup.bat`.
+```shell
+setup.bat
+```
 
 **Mac/Linux:**
 ```bash
@@ -16,11 +28,11 @@ chmod +x setup.sh
 ./setup.sh
 ```
 
-### 2. Activate the Environment
+### 3. Activate the Environment
 
 **Windows:**
-```bash
-nlp_env\\Scripts\\activate.bat
+```shell
+nlp_env\Scripts\activate.bat
 ```
 
 **Mac/Linux:**
@@ -28,22 +40,12 @@ nlp_env\\Scripts\\activate.bat
 source nlp_env/bin/activate
 ```
 
-### 3. Run the Interactive Demo
-Once the environment is activated, run the demo script. The first time you run this, it will download the model (~400MB).
+### 4. Run the Interactive Demo
+Once the environment is activated, run the demo script. The first time you run this, it will download the fine-tuned model from the Hugging Face Hub (~400MB).
 ```bash
 python quick_demo.py
 ```
 You can now enter financial headlines to see real-time sentiment predictions.
-
----
-
-## Project Summary
-
-This project develops a high-performance sentiment analysis model for financial news headlines to generate reliable trading signals. Starting with baseline models (TF-IDF & Logistic Regression), the project culminates in fine-tuning a domain-specific transformer, `ProsusAI/finbert`.
-
-### Key Results
-- **Peak Accuracy:** **80.8%** with the fine-tuned FinBERT model, a **13.4 point** improvement over the baseline.
-- **Negative Sentiment Detection (F1-Score):** Increased from 7% to **50% (~7x improvement)**, enabling superior risk detection.
 
 ---
 
@@ -117,25 +119,9 @@ The analysis shows that the move from classic ML to a transformer model delivere
 
 ## 5. Reproducing the Full Analysis
 
-This section details how to run the Jupyter notebooks to reproduce the original analysis, including data preprocessing and model training.
+To reproduce the modeling and analysis, first set up the environment by following the **Quick Start** instructions.
 
-### Prerequisites
-- Python 3.9+
-- pip for package management
-
-### Installation
-1.  Clone the repository:
-    ```bash
-    git clone https://github.com/jp-marques/financial-sentiment-analysis.git
-    cd financial-sentiment-analysis
-    ```
-2.  Install dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-### Running the Notebooks
-The project is organized into notebooks that correspond to the project phases. They should be run in the following order:
+Once your environment is activated, run the Jupyter notebooks in the following order:
 1.  `notebooks/01_eda_baselines.ipynb`
 2.  `notebooks/02_classic_ml.ipynb`
 3.  `notebooks/03_finetune_finbert.ipynb`
