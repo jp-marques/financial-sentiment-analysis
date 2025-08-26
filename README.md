@@ -77,7 +77,7 @@ The analysis shows that the move from classic ML to a transformer model delivere
 ### Installation
 1.  Clone the repository:
     ```bash
-    git clone https://github.com/your-username/financial-sentiment-analysis.git
+    git clone https://github.com/jp-marques/financial-sentiment-analysis.git
     cd financial-sentiment-analysis
     ```
 2.  Install dependencies:
@@ -94,8 +94,25 @@ The project is organized into notebooks that correspond to the project phases. T
 
 ---
 
-## 6. Tech Stack
+## 6. Data Source
+
+The dataset used in this project is the **Financial Sentiment Analysis Dataset**, which is widely used for financial sentiment analysis tasks. It contains sentences from financial news categorized by sentiment (Positive, Negative, Neutral).
+
+- **Source:** [Financial Sentiment Analysis on Kaggle](https://www.kaggle.com/datasets/sbhatti/financial-sentiment-analysis)
+- **License:** The dataset is available under the [Creative Commons CC0 1.0 Universal Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/).
+
+The data was split into training, validation, and test sets as detailed in the EDA notebook (`notebooks/01_eda_baselines.ipynb`). No additional filtering was applied beyond the standard preprocessing steps outlined in the notebooks.
+
+---
+
+## 7. Tech Stack
 - **Data Analysis & Modeling:** Pandas, Scikit-learn, PyTorch
 - **NLP:** Hugging Face Transformers (`ProsusAI/finbert`), NLTK
 - **Visualizations:** Matplotlib, Seaborn, Plotly
 - **Environment:** Python, Jupyter Notebooks
+
+---
+
+## 8. License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
