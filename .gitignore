@@ -7,8 +7,9 @@ __pycache__/
 # Jupyter Notebook
 .ipynb_checkpoints/
 
-# Models (should be downloaded/generated, not stored in Git)
+# Models
 models/
+finbert-financial-sentiment/
 
 # Environment variables
 *.env

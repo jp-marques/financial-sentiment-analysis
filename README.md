@@ -1,4 +1,43 @@
-# Project Summary
+# Financial Sentiment Analysis for Investment Signal Generation
+
+## 🚀 Quick Start Demo
+
+This demo runs a fine-tuned FinBERT model for interactive sentiment analysis. The model is downloaded automatically from the Hugging Face Hub the first time you run it.
+
+### 1. Run the Setup Script
+This will create a self-contained Python environment and install all necessary dependencies.
+
+**Windows:**
+Double-click `setup.bat`.
+
+**Mac/Linux:**
+```bash
+chmod +x setup.sh
+./setup.sh
+```
+
+### 2. Activate the Environment
+
+**Windows:**
+```bash
+nlp_env\\Scripts\\activate.bat
+```
+
+**Mac/Linux:**
+```bash
+source nlp_env/bin/activate
+```
+
+### 3. Run the Interactive Demo
+Once the environment is activated, run the demo script. The first time you run this, it will download the model (~400MB).
+```bash
+python quick_demo.py
+```
+You can now enter financial headlines to see real-time sentiment predictions.
+
+---
+
+## Project Summary
 
 This project develops a high-performance sentiment analysis model for financial news headlines to generate reliable trading signals. Starting with baseline models (TF-IDF & Logistic Regression), the project culminates in fine-tuning a domain-specific transformer, `ProsusAI/finbert`.
 
@@ -7,8 +46,6 @@ This project develops a high-performance sentiment analysis model for financial 
 - **Negative Sentiment Detection (F1-Score):** Increased from 7% to **50% (~7x improvement)**, enabling superior risk detection.
 
 ---
-
-# Financial Sentiment Analysis for Investment Signal Generation
 
 ## 1. Executive Summary
 
@@ -78,7 +115,9 @@ The analysis shows that the move from classic ML to a transformer model delivere
 
 ---
 
-## 5. How to Run This Project
+## 5. Reproducing the Full Analysis
+
+This section details how to run the Jupyter notebooks to reproduce the original analysis, including data preprocessing and model training.
 
 ### Prerequisites
 - Python 3.9+
