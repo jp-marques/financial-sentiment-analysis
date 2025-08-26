@@ -52,6 +52,8 @@ python quick_demo.py
 ```
 You can now enter financial headlines to see real-time sentiment predictions.
 
+![Quick Demo Screenshot](/.github/assets/quick_demo.png)
+
 ---
 
 ## 🤖 Model
