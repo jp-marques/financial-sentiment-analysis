@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Financial Sentiment Analysis - Quick Demo
 Run this to see the model in action!
@@ -13,13 +12,14 @@ def load_model():
     """Load the pre-trained FinBERT model"""
     try:
         model_path = "peejm/finbert-financial-sentiment"
-        print("🔄 Loading FinBERT model from Hugging Face Hub...")
+        print("Loading FinBERT model from Hugging Face Hub...")
+        print("Note: The first run will download the model (~440MB), which may take a few minutes.")
         tokenizer = AutoTokenizer.from_pretrained(model_path)
         model = AutoModelForSequenceClassification.from_pretrained(model_path)
-        print("✅ Model loaded successfully!")
+        print("Model loaded successfully!")
         return model, tokenizer
     except Exception as e:
-        print(f"❌ Error loading model: {e}")
+        print(f"Error loading model: {e}")
         print("Please ensure you have an internet connection and the model 'peejm/finbert-financial-sentiment' is public on the Hugging Face Hub.")
         sys.exit(1)
 
@@ -39,15 +39,15 @@ def predict_sentiment(text, model, tokenizer):
 
 def interactive_mode(model, tokenizer):
     """Interactive demo mode"""
-    print("\n🎯 Interactive Demo Mode")
+    print("\nInteractive Demo Mode")
     print("Enter financial headlines to analyze (type 'quit' to exit)")
     print("=" * 50)
     
     while True:
         try:
-            text = input("\n📰 Enter headline: ").strip()
+            text = input("\nEnter headline: ").strip()
             if text.lower() in ['quit', 'exit', 'q']:
-                print("👋 Thanks for trying the demo!")
+                print("Thanks for trying the demo!")
                 break
             if not text:
                 continue
@@ -56,22 +56,19 @@ def interactive_mode(model, tokenizer):
             
             # Color-coded output
             if sentiment == 'positive':
-                emoji = "📈"
                 color = "\033[92m"  # Green
             elif sentiment == 'negative':
-                emoji = "📉"
                 color = "\033[91m"  # Red
             else:
-                emoji = "➡️"
                 color = "\033[93m"  # Yellow
                 
-            print(f"{emoji} Sentiment: {color}{sentiment.upper()}\033[0m (confidence: {confidence:.1%})")
+            print(f"Sentiment: {color}{sentiment.upper()}\033[0m (confidence: {confidence:.1%})")
             
         except KeyboardInterrupt:
-            print("\n👋 Demo ended!")
+            print("\nDemo ended!")
             break
         except Exception as e:
-            print(f"❌ Error: {e}")
+            print(f"Error: {e}")
 
 def demo_examples(model, tokenizer):
     """Run predefined demo examples"""
@@ -83,21 +80,13 @@ def demo_examples(model, tokenizer):
         "Oil prices plummet on demand concerns"
     ]
     
-    print("\n🎯 Demo Examples")
+    print("\nDemo Examples")
     print("=" * 50)
     
     for i, text in enumerate(examples, 1):
         sentiment, confidence = predict_sentiment(text, model, tokenizer)
-        
-        if sentiment == 'positive':
-            emoji = "📈"
-        elif sentiment == 'negative':
-            emoji = "📉"
-        else:
-            emoji = "➡️"
-            
         print(f"{i}. {text}")
-        print(f"   {emoji} {sentiment.upper()} (confidence: {confidence:.1%})")
+        print(f"   {sentiment.upper()} (confidence: {confidence:.1%})")
         print()
 
 def main():
@@ -123,8 +112,8 @@ Examples:
     # Run appropriate mode
     if args.text:
         sentiment, confidence = predict_sentiment(args.text, model, tokenizer)
-        print(f"\n📰 Text: {args.text}")
-        print(f"🎯 Sentiment: {sentiment.upper()} (confidence: {confidence:.1%})")
+        print(f"\nText: {args.text}")
+        print(f"Sentiment: {sentiment.upper()} (confidence: {confidence:.1%})")
     elif args.examples:
         demo_examples(model, tokenizer)
     else:

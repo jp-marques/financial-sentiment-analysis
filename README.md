@@ -4,9 +4,9 @@ This project develops a high-performance sentiment analysis model for financial 
 
 ---
 
-## 🚀 Quick Start Demo
+## 🚀 Quick Start
 
-This section guides you through running the interactive demo.
+Follow these steps to get the demo up and running quickly.
 
 ### 1. Clone the Repository
 ```bash
@@ -14,33 +14,38 @@ git clone https://github.com/jp-marques/financial-sentiment-analysis.git
 cd financial-sentiment-analysis
 ```
 
-### 2. Run the Setup Script
-This will create a self-contained Python environment (`nlp_env`) and install all dependencies.
+### 2. Setup
 
-**Windows:**
-```shell
-setup.bat
-```
+First, run the setup script to create a virtual environment and install the required dependencies.
 
-**Mac/Linux:**
-```bash
-chmod +x setup.sh
-./setup.sh
-```
+- **On Windows:**
+  ```bash
+  ./setup.bat
+  ```
+- **On macOS/Linux:**
+  ```bash
+  chmod +x setup.sh
+  ./setup.sh
+  ```
+You will be prompted to choose between a **Quick Demo** or a **Full Setup**.
 
-### 3. Activate the Environment
+- **Quick Demo**: Installs only the essential packages to run `quick_demo.py`. This is much faster.
+- **Full Setup**: Installs all packages required for the demo *and* for running the Jupyter notebooks.
 
-**Windows:**
-```shell
-nlp_env\Scripts\activate.bat
-```
+### 2. Activate Virtual Environment
 
-**Mac/Linux:**
+Once the setup is complete, activate the virtual environment.
+
+- **On Windows:**
+  ```bash
+  nlp_env\Scripts\activate
+  ```
+- **On macOS/Linux:**
 ```bash
 source nlp_env/bin/activate
 ```
 
-### 4. Run the Interactive Demo
+### 3. Run the Interactive Demo
 Once the environment is activated, run the demo script. The first time you run this, it will automatically download the fine-tuned model from the Hugging Face Hub.
 ```bash
 python quick_demo.py
